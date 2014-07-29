@@ -1,0 +1,58 @@
+/* Universal */
+
+h1 {
+	text-align: center;
+}
+
+/* Forms */
+form {
+	padding: 20px 10px;
+	input, select {
+		width: 100%;
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+
+/* Datepicker */
+
+#ui-datepicker-div {
+	padding: 15px;
+	background-color: #EFEFEF;
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+
+/* Miscellaneous */
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing(border-box);
+}
+
+/* flight search page */
+
+.sidebar {
+	background-color: #EEE;
+	border-radius: 0 0 5px 5px;
+}
+
+.found_flights {
+	table {
+		width: 100%;
+		th, td {
+			
+		}
+	}
+	h2 {
+		text-align: center;
+		color: $gray_light
+	}
+	.btn {
+		float: right;
+		margin-top: 20px;
+	}
+}

@@ -1,0 +1,27 @@
+<% if @found_flights.size > 0 %>	
+	<table class="flights_avail">
+		<thead>
+			<th>From</th>
+			<th>To</th>
+			<th>Departs</th>
+			<th>Arrives</th>
+			<th>Select</th>
+		</thead>
+		<tbody>
+		<%= form_tag new_booking_path, method: :get do %>	
+			<% @found_flights.each do |flight| %>
+				<tr>
+					<td><%= flight.departure_airport.name %></td>
+					<td><%= flight.arrival_airport.name %></td>
+					<td><%= flight.departure_time.strftime "%m-%d %H:%M:%S" %></td>
+					<td><%= flight.arrival_time.strftime "%m-%d %H:%M:%S" %></td>
+					<td><%= radio_button_tag(:flight_id, flight.id) %></td>
+				</tr>
+			<% end %>
+	</table>
+			<%= hidden_field_tag :passengers, params[:passengers] %>
+			<%= submit_tag "Book Flight", class: "btn btn-large btn-primary" %>
+		<% end %>
+<% else %>
+	<h2>Sorry, No Flights Were Found</h2>
+<% end %>

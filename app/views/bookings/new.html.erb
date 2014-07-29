@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-sm-offset-3 col-sm-6">
+		<%= form_for(@booking) do |f| %>
+			<%= f.hidden_field :flight_id, value: params[:flight_id] %>
+			<h2>Passengers:</h2>
+			<%= f.fields_for :passengers do |user| %>
+				<%= user.label :name %>
+				<%= user.text_field :name %>
+
+				<%= user.label :email %>
+				<%= user.text_field :email %>
+			<% end %>
+			<%= f.submit class:"btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
