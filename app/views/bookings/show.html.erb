@@ -1,0 +1,19 @@
+<h1>Booking Info</h1>
+
+<div class="row">
+	<div class="col-sm-offset-2 col-sm-8 booking-info">
+		<ul>
+			<li><strong>From:</strong> <%= @from.name %> (<%= @from.code %>)</li>
+			<li><strong>To:</strong> <%= @to.name %> (<%= @to.code %>)</li>
+			<li><strong>Departs:</strong> <%= @flight.date %> <strong>at:</strong> <%= @flight.departure_time %></li>
+			<li><strong>Arrives:</strong> <%= @flight.date %> at: <%= @flight.arrival_time %></li>
+			<li><strong>Passengers:</strong></li>
+			<ol>
+				<% @passengers.each do |passenger| %>
+					<li><%= passenger.name  %> :: <%= passenger.email %></li>
+				<% end %>
+			</ol>
+		</ul>
+	</div>
+</div>
+
